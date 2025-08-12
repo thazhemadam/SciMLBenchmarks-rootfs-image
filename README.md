@@ -1,8 +1,11 @@
 # Rootfs Images
 
 ```bash
-if [ -d "../rootfs-images" ]; then
-    git clone git@github.com:JuliaCI/rootfs-images.git ../
+julia --project rootfs-script.jl --arch amd64
+
+# to identify the treehash for a rootfs image.
+if [ ! -d "../rootfs-images" ]; then
+    git clone git@github.com:JuliaCI/rootfs-images.git ../rootfs-images
 fi
-julia rootfs-script.jl --arch amd64
+
 ```
